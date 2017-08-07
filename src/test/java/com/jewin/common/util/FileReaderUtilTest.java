@@ -12,7 +12,7 @@ public class FileReaderUtilTest {
 
     @Test
     public void testReadAndProcessEachLine() throws Exception {
-        String filePath = "/Users/jianyang/work/code/java/mywork/common-util/src/main/java/com/jewin/common/util/FileReaderUtil.java";
+        String filePath = "/Users/jianyang/work/code/java/mywork/jtool/src/main/java/com/jewin/common/util/FileReaderUtil.java";
         List<String> lines = new LinkedList<String>();
         Integer count = FileReaderUtil.readAndProcessEachLine(filePath, "UTF-8", new FileReaderUtil.ProcessCallback<Integer>(){
             @Override

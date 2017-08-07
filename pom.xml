@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jewin.common</groupId>
-    <artifactId>common-util</artifactId>
+    <artifactId>jtool</artifactId>
     <version>1.0-SNAPSHOT</version>
     <description>工具类集合</description>
     <packaging>jar</packaging>
