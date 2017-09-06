@@ -20,7 +20,7 @@ public class FileReaderUtil extends FileUtils {
      * 文件内容处理类
      * @param <T>
      */
-    interface ProcessCallback<T>{
+    public interface ProcessCallback<T>{
         /**
          * 针对每一行文件进行处理
          * @param lineIndex     文件行数索引
