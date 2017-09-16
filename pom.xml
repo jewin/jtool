@@ -6,7 +6,7 @@
 
     <groupId>com.jewin.common</groupId>
     <artifactId>jtool</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.2.1-SNAPSHOT</version>
     <description>工具类集合</description>
     <packaging>jar</packaging>
 
@@ -105,4 +105,18 @@
 
         </plugins>
     </build>
+     <distributionManagement>
+        <repository>
+            <id>biuoo-releases</id>
+            <url>
+                http://nexus.biuoo.com/content/repositories/releases/
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>biuoo-snapshots</id>
+            <url>
+                http://nexus.biuoo.com/content/repositories/snapshots/
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
