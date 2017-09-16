@@ -90,7 +90,7 @@ public class SocketConnectionKeyedFactory extends BaseKeyedPooledObjectFactory i
             throw new NullPointerException(String.format("which PooledObject of key =【%s】is null.", key));
         }
 
-        Socket socket = (Socket)p;
+        Socket socket = (Socket)p.getObject();
         if(socket.isConnected() && !socket.isClosed()){
             socket.close();
         }else{
@@ -103,7 +103,7 @@ public class SocketConnectionKeyedFactory extends BaseKeyedPooledObjectFactory i
         if(null == p){
             return false;
         }else{
-            Socket socket = (Socket) p;
+            Socket socket = (Socket)p.getObject();
             return (socket.isConnected()) && (!socket.isClosed());
         }
     }
