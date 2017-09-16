@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<configuration scan="true" scanPeriod="60 seconds" debug="true">-->
+<configuration>
+    <property name="LOG_PATH" value="/logs/proxy" />
+    <property name="LOG_FILE_NAME" value="socketproxy" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+　　　　　　<encoder>
+　　　　　　　　<pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+　　　　　　</encoder>
+    </appender>
+
+    <appender name="LOGFILE-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <File>${LOG_PATH}/${LOG_FILE_NAME}-info.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+    </appender>
+
+    <appender name="LOGFILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <File>${LOG_PATH}/${LOG_FILE_NAME}-error.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.%d{yyyy-MM-dd}</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+    </appender>
+
+    <appender name="LOGFILE-DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <File>${LOG_PATH}/${LOG_FILE_NAME}-debug.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/server_%d{yyyy-MM-dd}.debug.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%date{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] %p %C %t, - %msg%n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+    </appender>
+
+    <logger name="com.jewin" additivity="false">
+        <level value="INFO" />
+        <appender-ref ref="LOGFILE-INFO"/>
+    </logger>
+    <logger name="com.jewin" additivity="false">
+        <level value="ERROR" />
+        <appender-ref ref="LOGFILE-ERROR"/>
+    </logger>
+    <logger name="com.jewin" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="LOGFILE-DEBUG"/>
+    </logger>
+    <logger name="com.jewin" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="LOGFILE-INFO" />
+        <appender-ref ref="LOGFILE-ERROR" />
+        <appender-ref ref="LOGFILE-DEBUG" />
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

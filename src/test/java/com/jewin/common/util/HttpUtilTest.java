@@ -1,5 +1,6 @@
 package com.jewin.common.util;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,5 +23,11 @@ public class HttpUtilTest {
 //        String response = HttpUtil.doSmartPost(url, jsonParam, "UTF-8", null);
         String response = HttpUtil.doGet(url);
         System.out.println(response);
+    }
+
+    @Test
+    public void test(){
+//        Assert.fail("xxxx");
+        Assert.assertTrue("success", false);
     }
 }

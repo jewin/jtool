@@ -40,6 +40,15 @@ public class SocketConnectionPool extends AbstractPool<Socket> implements Connec
     }
 
     /**
+     * @param poolConfig 池配置
+     * @param factory
+     */
+    public SocketConnectionPool(final PoolConfig poolConfig, final SocketConnectionFactory factory) {
+
+        super(poolConfig, factory);
+    }
+
+    /**
      * @param poolConfig  池配置
      * @param host        地址
      * @param port        端口
