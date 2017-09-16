@@ -106,7 +106,7 @@ public class NumberUtilsTest {
 
     /**
     *
-    * Method: isGreaterAndLessEqualRight(final BigDecimal bd, final BigDecimal left, final BigDecimal right)
+    * Method: isGreaterLeftAndLessEqualRight(final BigDecimal bd, final BigDecimal left, final BigDecimal right)
     *
     */
     @Test
@@ -115,16 +115,16 @@ public class NumberUtilsTest {
         final BigDecimal left = new BigDecimal("12.34");
         final BigDecimal right = new BigDecimal("90.12");
 
-        Assert.assertTrue(NumberUtils.isGreaterAndLessEqualRight(bd, left, right));
+        Assert.assertTrue(NumberUtils.isGreaterLeftAndLessEqualRight(bd, left, right));
 
         bd = new BigDecimal("12.34");
-        Assert.assertTrue(!NumberUtils.isGreaterAndLessEqualRight(bd, left, right));
+        Assert.assertTrue(!NumberUtils.isGreaterLeftAndLessEqualRight(bd, left, right));
 
         bd = new BigDecimal("90.12");
-        Assert.assertTrue(NumberUtils.isGreaterAndLessEqualRight(bd, left, right));
+        Assert.assertTrue(NumberUtils.isGreaterLeftAndLessEqualRight(bd, left, right));
 
         bd = new BigDecimal("90.13");
-        Assert.assertTrue(!NumberUtils.isGreaterAndLessEqualRight(bd, left, right));
+        Assert.assertTrue(!NumberUtils.isGreaterLeftAndLessEqualRight(bd, left, right));
 
     }
 

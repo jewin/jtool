@@ -130,7 +130,7 @@ public class NumberUtils extends org.apache.commons.lang3.math.NumberUtils{
      * @param right                      the right one
      * @return
      */
-    public static boolean isGreaterAndLessEqualRight( final BigDecimal bd, final BigDecimal left, final BigDecimal right ) {
+    public static boolean isGreaterLeftAndLessEqualRight(final BigDecimal bd, final BigDecimal left, final BigDecimal right ) {
         if( bd == null ){
             throw new IllegalArgumentException( "first argument is null" );
         }
@@ -359,7 +359,7 @@ public class NumberUtils extends org.apache.commons.lang3.math.NumberUtils{
      * @param right                      the right one
      * @return
      */
-    public static boolean isGreaterAndLessEqualRight( final Double bd, final Double left, final Double right ) {
+    public static boolean isGreaterLeftAndLessEqualRight(final Double bd, final Double left, final Double right ) {
         if( bd == null ){
             throw new IllegalArgumentException( "first argument is null" );
         }
@@ -380,7 +380,7 @@ public class NumberUtils extends org.apache.commons.lang3.math.NumberUtils{
         BigDecimal leftBD = BigDecimal.valueOf(left);
         BigDecimal rightBD = BigDecimal.valueOf(right);
 
-        return isGreaterAndLessEqualRight(bdBD, leftBD, rightBD);
+        return isGreaterLeftAndLessEqualRight(bdBD, leftBD, rightBD);
     }
 
 
