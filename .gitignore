@@ -10,7 +10,7 @@ target/
 .mystrutsdata
 .project
 .springBeans
-/.idea/*
+.idea
 /.myeclipse/*
 /.settings/*
 /WebRoot/WEB-INF/classes/*
@@ -37,3 +37,4 @@ src/main/resources/db_xinjiang.properties
 .tern-project
 /bin/
 /WebRoot/WEB-INF/classes/*
+*.iml

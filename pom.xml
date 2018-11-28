@@ -6,7 +6,7 @@
 
     <groupId>com.jewin.common</groupId>
     <artifactId>jtool</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.2.1-RELEASES</version>
     <description>工具类集合</description>
     <packaging>jar</packaging>
 
@@ -47,11 +47,6 @@
             <version>3.2</version>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.6.Final</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.2</version>
@@ -79,29 +74,28 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>${exec.mainClass}</mainClass>
-                                </transformer>
-                            </transformers>
-                            <artifactSet>
-                            </artifactSet>
-                            <!--<outputFile>${project.build.directory}/${project.artifactId}-${project.version}-fat.jar</outputFile>-->
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-shade-plugin</artifactId>-->
+                <!--<version>2.3</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>shade</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<transformers>-->
+                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
+                                    <!--<mainClass>${exec.mainClass}</mainClass>-->
+                                <!--</transformer>-->
+                            <!--</transformers>-->
+                            <!--<artifactSet>-->
+                            <!--</artifactSet>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
@@ -109,13 +103,13 @@
         <repository>
             <id>biuoo-releases</id>
             <url>
-                http://nexus.biuoo.com/content/repositories/releases/
+                http://nexus.biuoo.com/nexus/content/repositories/releases/
             </url>
         </repository>
         <snapshotRepository>
             <id>biuoo-snapshots</id>
             <url>
-                http://nexus.biuoo.com/content/repositories/snapshots/
+                http://nexus.biuoo.com/nexus/content/repositories/snapshots/
             </url>
         </snapshotRepository>
     </distributionManagement>
