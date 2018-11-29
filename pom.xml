@@ -6,7 +6,7 @@
 
     <groupId>com.jewin.common</groupId>
     <artifactId>jtool</artifactId>
-    <version>1.2.1-SNAPSHOTS</version>
+    <version>1.2.1-SNAPSHOT</version>
     <description>工具类集合</description>
     <packaging>jar</packaging>
 
